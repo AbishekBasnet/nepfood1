@@ -130,4 +130,4 @@ The `modules/mealkit-util.js` file contains:
 
 ## Author
 
-Created for Sault College - Semester 4 Assignment
+Created for Seneca college
