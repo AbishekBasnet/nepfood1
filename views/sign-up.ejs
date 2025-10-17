@@ -1,0 +1,155 @@
+<!-- Sign Up Page -->
+<section class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-nepali-blue mb-2">🏔️ NepFood</h1>
+            <h2 class="text-2xl font-bold text-gray-900">Create your account</h2>
+            <p class="mt-2 text-gray-600">Join the authentic Nepali culinary experience</p>
+        </div>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <!-- Display success/error messages -->
+            <% if (error) { %>
+                <div class="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                    <%= error %>
+                </div>
+            <% } %>
+            
+            <% if (success) { %>
+                <div class="mb-4 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded">
+                    <%= success %>
+                    <p class="mt-2">
+                        <a href="/log-in" class="font-medium text-nepali-blue hover:text-himalayan">
+                            Click here to log in →
+                        </a>
+                    </p>
+                </div>
+            <% } %>
+
+            <form class="space-y-6" action="/sign-up" method="POST">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">
+                        Full Name
+                    </label>
+                    <div class="mt-1">
+                        <input id="name" name="name" type="text" required 
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">
+                        Phone Number
+                    </label>
+                    <div class="mt-1">
+                        <input id="phone" name="phone" type="tel" required 
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        Email Address
+                    </label>
+                    <div class="mt-1">
+                        <input id="email" name="email" type="email" required 
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter your email address">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">
+                        Password
+                    </label>
+                    <div class="mt-1">
+                        <input id="password" name="password" type="password" required minlength="8"
+                               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter password (8+ chars, 1 uppercase, 1 number, 1 special)">
+                    </div>
+                    <div class="mt-1 text-xs text-gray-500">
+                        Password must contain: 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@$!%*?&)
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" 
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-nepali-blue hover:bg-himalayan focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nepali-blue transition-colors hover-magnetic">
+                        Create Account
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Already have an account?</span>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button type="button" 
+                            onclick="window.location.href='/log-in'"
+                            class="w-full py-3 px-4 border-2 border-nepali-blue rounded-lg text-sm font-semibold text-nepali-blue bg-white hover:bg-nepali-blue hover:text-white transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                        Log In Instead
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const form = document.querySelector('form');
+    
+    // Password validation function
+    function validatePassword(password) {
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumbers = /\d/.test(password);
+        const hasSpecialChar = /[@$!%*?&]/.test(password);
+        const hasMinLength = password.length >= 8;
+        
+        return hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar && hasMinLength;
+    }
+    
+    // Real-time password validation
+    passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        const isValid = validatePassword(password);
+        
+        if (password.length > 0) {
+            if (isValid) {
+                this.style.borderColor = '#10B981'; // green
+                this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+            } else {
+                this.style.borderColor = '#EF4444'; // red
+                this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+            }
+        } else {
+            this.style.borderColor = '#D1D5DB'; // default gray
+            this.style.boxShadow = 'none';
+        }
+    });
+    
+    // Form submission validation
+    form.addEventListener('submit', function(e) {
+        const password = passwordInput.value;
+        if (!validatePassword(password)) {
+            e.preventDefault();
+            alert('Password must contain at least 8 characters with 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@$!%*?&).');
+            passwordInput.focus();
+        }
+    });
+});
+</script>

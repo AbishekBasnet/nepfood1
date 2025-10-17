@@ -1,0 +1,311 @@
+/* Custom styles for NepFood */
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Magnetic hover effect for buttons */
+.hover-magnetic {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-magnetic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hover-magnetic:hover::before {
+    left: 100%;
+}
+
+.hover-magnetic:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(var(--nepali-blue-rgb), 0.3);
+}
+
+/* CSS Custom Properties for Better Color Management */
+:root {
+    --nepali-blue: #4A90E2;
+    --nepali-blue-rgb: 74, 144, 226;
+    --himalayan: #6BB6FF;
+    --himalayan-rgb: 107, 182, 255;
+    --saffron: #FFB347;
+    --saffron-rgb: 255, 179, 71;
+    --warm-gray: #64748B;
+    --mountain-white: #FFFFFF;
+    --soft-cream: #F8FAFC;
+}
+
+/* Nepali-themed gradient backgrounds with optimized color format */
+.nepali-gradient {
+    background: linear-gradient(135deg, var(--nepali-blue) 0%, var(--himalayan) 100%);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced button styles with modern color format */
+.btn-nepali {
+    background: linear-gradient(45deg, var(--nepali-blue), var(--saffron));
+    border: none;
+    color: var(--mountain-white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(var(--nepali-blue-rgb), 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-nepali::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.btn-nepali:hover::before {
+    left: 100%;
+}
+
+.btn-nepali:hover {
+    background: linear-gradient(45deg, var(--himalayan), var(--nepali-blue));
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(var(--nepali-blue-rgb), 0.4);
+}
+
+.btn-nepali:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: all 0.1s ease;
+}
+
+/* Custom scrollbar with CSS variables */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--soft-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--nepali-blue);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--himalayan);
+}
+
+/* Utility classes for modern color usage */
+.text-nepali-blue-alpha {
+    color: rgba(var(--nepali-blue-rgb), 0.8);
+}
+
+.bg-nepali-blue-alpha {
+    background-color: rgba(var(--nepali-blue-rgb), 0.1);
+}
+
+.border-nepali-blue-alpha {
+    border-color: rgba(var(--nepali-blue-rgb), 0.3);
+}
+
+/* Form enhancements */
+.form-input:focus {
+    border-color: #8B2635;
+    box-shadow: 0 0 0 3px rgba(139, 38, 53, 0.1);
+}
+
+/* Enhanced card hover effects */
+.meal-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.meal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(var(--nepali-blue-rgb), 0.1), rgba(var(--saffron-rgb), 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.meal-card:hover::before {
+    opacity: 1;
+}
+
+.meal-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.meal-card:hover img {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+
+/* Image hover effects within cards */
+.meal-card img {
+    transition: transform 0.4s ease;
+}
+
+/* Enhanced Navigation Hover Effects */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--saffron), var(--himalayan));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo hover effects */
+.logo-hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-hover:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced form input hover effects */
+.form-input {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.form-input:hover {
+    border-color: rgba(var(--nepali-blue-rgb), 0.3);
+    box-shadow: 0 2px 8px rgba(var(--nepali-blue-rgb), 0.1);
+}
+
+.form-input:focus {
+    border-color: var(--nepali-blue);
+    box-shadow: 0 0 0 3px rgba(var(--nepali-blue-rgb), 0.2);
+    transform: scale(1.02);
+}
+
+/* Floating action button hover */
+.floating-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 20px rgba(var(--nepali-blue-rgb), 0.3);
+}
+
+.floating-btn:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 8px 30px rgba(var(--nepali-blue-rgb), 0.4);
+}
+
+/* Glow effect for special elements */
+.glow-on-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(var(--saffron-rgb), 0.6);
+    filter: brightness(1.1);
+}
+
+/* Loading spinner for future use */
+.spinner {
+    border: 4px solid #F7F5F3;
+    border-top: 4px solid #8B2635;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}

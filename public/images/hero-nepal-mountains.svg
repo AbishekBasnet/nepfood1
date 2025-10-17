@@ -1,0 +1,26 @@
+<!-- Hero Background Image Placeholder -->
+<!-- This represents a beautiful Himalayan mountain landscape -->
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8E8E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B0B0B0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+  
+  <!-- Mountain ranges -->
+  <path d="M0 600 L300 400 L600 450 L900 380 L1200 420 L1500 350 L1800 400 L1920 380 L1920 1080 L0 1080 Z" fill="url(#mountainGradient)" opacity="0.9"/>
+  <path d="M0 700 L200 550 L500 580 L800 520 L1100 560 L1400 500 L1700 540 L1920 520 L1920 1080 L0 1080 Z" fill="url(#mountainGradient)" opacity="0.7"/>
+  <path d="M0 800 L150 650 L400 680 L700 620 L1000 660 L1300 600 L1600 640 L1920 620 L1920 1080 L0 1080 Z" fill="url(#mountainGradient)" opacity="0.5"/>
+  
+  <!-- Sun -->
+  <circle cx="1600" cy="200" r="80" fill="#FFB347" opacity="0.8"/>
+</svg>

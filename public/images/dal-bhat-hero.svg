@@ -1,0 +1,42 @@
+<!-- Dal Bhat Hero Image Placeholder -->
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="plateGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#8B4513" opacity="0.1"/>
+  
+  <!-- Main plate -->
+  <ellipse cx="300" cy="200" rx="250" ry="180" fill="url(#plateGradient)" stroke="#E0E0E0" stroke-width="2"/>
+  
+  <!-- Rice portion -->
+  <ellipse cx="220" cy="180" rx="80" ry="60" fill="#FFFAF0"/>
+  <circle cx="200" cy="170" r="3" fill="#F5F5DC" opacity="0.7"/>
+  <circle cx="230" cy="185" r="2" fill="#F5F5DC" opacity="0.7"/>
+  <circle cx="240" cy="165" r="2" fill="#F5F5DC" opacity="0.7"/>
+  
+  <!-- Dal (lentil curry) -->
+  <ellipse cx="380" cy="180" rx="70" ry="50" fill="#DAA520"/>
+  <circle cx="370" cy="175" r="4" fill="#B8860B" opacity="0.8"/>
+  <circle cx="390" cy="185" r="3" fill="#B8860B" opacity="0.8"/>
+  
+  <!-- Vegetables -->
+  <circle cx="300" cy="250" r="25" fill="#228B22"/>
+  <circle cx="280" cy="260" r="8" fill="#32CD32" opacity="0.8"/>
+  <circle cx="320" cy="245" r="6" fill="#32CD32" opacity="0.8"/>
+  
+  <!-- Pickle -->
+  <ellipse cx="180" cy="250" rx="20" ry="15" fill="#FF6347"/>
+  
+  <!-- Papad -->
+  <ellipse cx="420" cy="240" rx="30" ry="35" fill="#DEB887" stroke="#CD853F" stroke-width="1"/>
+  
+  <!-- Garnish -->
+  <circle cx="250" cy="150" r="2" fill="#90EE90"/>
+  <circle cx="350" cy="150" r="2" fill="#90EE90"/>
+  <circle cx="300" cy="140" r="1" fill="#90EE90"/>
+</svg>

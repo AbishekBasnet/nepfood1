@@ -1,0 +1,94 @@
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-nepali-blue to-himalayan text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">On The Menu</h1>
+        <p class="text-xl text-mountain-white">Discover this week's authentic Nepali meal selections</p>
+    </div>
+</section>
+
+<!-- Menu Categories -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <% mealKitsByCategory.forEach(categoryGroup => { %>
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-nepali-blue mb-8 text-center">
+                    <%= categoryGroup.category %>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <% categoryGroup.mealKits.forEach(mealKit => { %>
+                        <div class="meal-card bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="h-48 bg-gray-200 overflow-hidden">
+                                <img src="<%= mealKit.imageUrl %>" alt="<%= mealKit.title %>" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-semibold text-nepali-blue flex-1"><%= mealKit.title %></h3>
+                                    <% if (mealKit.featuredMealKit) { %>
+                                        <span class="bg-yellow-400 text-yellow-900 px-2 py-1 text-xs font-semibold rounded-full ml-2 glow-on-hover">
+                                            Featured
+                                        </span>
+                                    <% } %>
+                                </div>
+                                <p class="text-gray-600 mb-3 font-medium"><%= mealKit.includes %></p>
+                                <p class="text-gray-700 mb-4"><%= mealKit.description %></p>
+                                
+                                <!-- Meal Info Grid -->
+                                <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+                                    <div class="bg-blue-50 p-2 rounded hover-lift">
+                                        <span class="font-semibold text-nepali-blue">Price:</span>
+                                        <span class="block text-lg font-bold">$<%= mealKit.price %></span>
+                                    </div>
+                                    <div class="bg-blue-50 p-2 rounded hover-lift">
+                                        <span class="font-semibold text-nepali-blue">Cooking Time:</span>
+                                        <span class="block"><%= mealKit.cookingTime %> minutes</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm hover-lift">
+                                        👥 <%= mealKit.servings %> servings
+                                    </span>
+                                    <span class="bg-gray-200 px-3 py-1 rounded-full text-sm hover-lift">
+                                        🏷️ <%= mealKit.category %>
+                                    </span>
+                                </div>
+                                
+                                <% if (user) { %>
+                                    <button class="w-full btn-nepali hover-magnetic py-3 px-4 rounded-lg font-semibold">
+                                        Add to Cart - $<%= mealKit.price %>
+                                    </button>
+                                <% } else { %>
+                                    <a href="/sign-up" class="block w-full btn-nepali hover-magnetic py-3 px-4 rounded-lg text-center font-semibold">
+                                        Sign Up to Order
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-16 bg-nepali-blue text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Start Cooking?</h2>
+        <p class="text-xl mb-8 text-mountain-white">
+            Join thousands of food lovers who have discovered the authentic taste of Nepal.
+        </p>
+        <% if (!user) { %>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/sign-up" class="btn-nepali hover-magnetic glow-on-hover px-8 py-3 rounded-lg text-lg font-semibold">
+                    Sign Up Now
+                </a>
+                <a href="/" class="border border-white hover:bg-white hover:text-nepali-blue px-8 py-3 rounded-lg text-lg font-semibold transition-colors hover-lift">
+                    Learn More
+                </a>
+            </div>
+        <% } else { %>
+            <p class="text-mountain-white text-lg">Welcome back! Start adding items to your cart to place an order.</p>
+        <% } %>
+    </div>
+</section>

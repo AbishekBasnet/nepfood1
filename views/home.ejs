@@ -1,0 +1,208 @@
+<!-- Hero Section with Prominent Image -->
+<section class="relative min-h-screen bg-gradient-to-br from-nepali-blue-500 via-nepali-blue-600 to-himalayan-500 text-white overflow-hidden">
+    <style>
+        /* Welcome Animation */
+        @keyframes slide-in-up {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-slide-in-up {
+            animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+<section class="relative min-h-screen bg-gradient-to-br from-nepali-blue-500 via-nepali-blue-600 to-himalayan-500 text-white overflow-hidden">
+    <!-- Background Hero Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="/images/home.jpg" alt="Beautiful Nepali cuisine and culture representing authentic meal kits" class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-r from-nepali-blue-700/70 to-himalayan-500/70"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 flex items-center min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text Content -->
+                <div class="text-center lg:text-left">
+                    <!-- Animated Welcome Message -->
+                    <div class="mb-4 overflow-hidden">
+                        <h2 class="text-2xl md:text-3xl font-medium text-saffron-100 animate-slide-in-up opacity-0" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+                            Welcome to NepFood
+                        </h2>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Authentic <span class="text-saffron-100">Nepali Flavors</span><br>
+                        Delivered Fresh to Your Door
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-nepali-blue-100 leading-relaxed">
+                        Experience the rich culinary heritage of Nepal with our expertly crafted meal kits featuring traditional recipes and premium ingredients sourced from the Himalayas.
+                    </p>
+                    
+                    <!-- Call-to-Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <% if (!user) { %>
+                            <a href="/sign-up" class="btn-nepali hover-magnetic glow-on-hover px-8 py-4 rounded-lg text-lg font-semibold">
+                                Start Your Culinary Journey
+                            </a>
+                            <a href="/on-the-menu" class="border-2 border-white hover:bg-white hover:text-nepali-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+                                Explore Our Menu
+                            </a>
+                        <% } else { %>
+                            <a href="/on-the-menu" class="btn-nepali hover-magnetic glow-on-hover px-8 py-4 rounded-lg text-lg font-semibold">
+                                Browse This Week's Menu
+                            </a>
+                            <a href="#featured-meals" class="border-2 border-white hover:bg-white hover:text-nepali-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover-lift">
+                                See Featured Meals
+                            </a>
+                        <% } %>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-3xl font-bold text-saffron-100">500+</div>
+                            <div class="text-sm text-nepali-blue-100">Happy Customers</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-saffron-100">6</div>
+                            <div class="text-sm text-nepali-blue-100">Authentic Dishes</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-saffron-100">30min</div>
+                            <div class="text-sm text-nepali-blue-100">Average Prep Time</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image/Visual Element -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <!-- NepFood Logo Design -->
+                        <div class="bg-white rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 p-8 text-center hover-lift glow-on-hover">
+                            <div class="mb-4">
+                                <h2 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-nepali-blue-600 to-himalayan-500 bg-clip-text text-transparent">
+                                    Nep<span class="text-saffron-500">Food</span>
+                                </h2>
+                            </div>
+                            <div class="text-warm-gray text-lg font-medium">
+                                Authentic Nepali Cuisine
+                            </div>
+                            <div class="mt-4 flex justify-center space-x-2">
+                                <span class="text-2xl">🏔️</span>
+                                <span class="text-2xl">🥘</span>
+                                <span class="text-2xl">🌿</span>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-saffron-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                            🏔️ Authentic
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-8 -left-8 bg-white/10 backdrop-blur-sm rounded-full p-4 animate-pulse">
+                        <span class="text-2xl">🥘</span>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-sm rounded-full p-4 animate-pulse delay-1000">
+                        <span class="text-2xl">🌿</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-nepali-blue-600">Why Choose NepFood?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 bg-nepali-blue-50 rounded-lg shadow-md border border-nepali-blue-100 hover-lift transition-shadow duration-300">
+                <div class="text-4xl mb-4">🏔️</div>
+                <h3 class="text-xl font-semibold mb-4 text-nepali-blue-600">Authentic Himalayan Flavors</h3>
+                <p class="text-warm-gray">Traditional Nepali recipes passed down through generations, featuring authentic spices and cooking methods.</p>
+            </div>
+            <div class="text-center p-6 bg-nepali-blue-50 rounded-lg shadow-md border border-nepali-blue-100 hover-lift transition-shadow duration-300">
+                <div class="text-4xl mb-4">🥘</div>
+                <h3 class="text-xl font-semibold mb-4 text-nepali-blue-600">Restaurant Quality</h3>
+                <p class="text-warm-gray">Chef-designed meals with premium ingredients sourced directly from Nepal and local farms.</p>
+            </div>
+            <div class="text-center p-6 bg-nepali-blue-50 rounded-lg shadow-md border border-nepali-blue-100 hover-lift transition-shadow duration-300">
+                <div class="text-4xl mb-4">⏰</div>
+                <h3 class="text-xl font-semibold mb-4 text-nepali-blue-600">Quick & Easy</h3>
+                <p class="text-warm-gray">Most meals ready in 30 minutes or less with detailed step-by-step cooking instructions included.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Meal Kits Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-himalayan">Featured This Week</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <% featuredMealKits.forEach(mealKit => { %>
+                <div class="meal-card bg-white rounded-lg shadow-lg overflow-hidden border border-nepali-blue border-opacity-20">
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="<%= mealKit.imageUrl %>" alt="<%= mealKit.title %>" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-nepali-blue"><%= mealKit.title %></h3>
+                        <p class="text-gray-600 mb-3"><%= mealKit.includes %></p>
+                        <p class="text-warm-gray mb-4"><%= mealKit.description %></p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-nepali-red">$<%= mealKit.price %></span>
+                            <div class="text-sm text-gray-600">
+                                <span class="bg-nepali-blue bg-opacity-20 px-2 py-1 rounded mr-2">⏱️ <%= mealKit.cookingTime %> min</span>
+                                <span class="bg-nepali-blue bg-opacity-20 px-2 py-1 rounded">👥 <%= mealKit.servings %> servings</span>
+                            </div>
+                        </div>
+                        <% if (user) { %>
+                            <button class="w-full btn-nepali hover-magnetic py-2 px-4 rounded transition-colors">
+                                Add to Cart
+                            </button>
+                        <% } else { %>
+                            <a href="/sign-up" class="block w-full btn-nepali hover-magnetic py-2 px-4 rounded text-center transition-colors">
+                                Sign Up to Order
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <div class="text-center mt-12">
+            <a href="/on-the-menu" class="btn-nepali hover-magnetic glow-on-hover px-8 py-3 rounded-lg text-lg font-semibold">
+                View Full Menu
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-himalayan text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6">Stay Updated</h2>
+        <p class="text-xl mb-8 text-white opacity-90">
+            Get weekly menu updates and exclusive Nepali recipes delivered to your inbox.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Enter your email" class="form-input flex-1 px-4 py-3 rounded-lg text-gray-800">
+            <button class="btn-nepali hover-magnetic px-6 py-3 rounded-lg font-semibold">
+                Subscribe
+            </button>
+        </div>
+    </div>
+</section>

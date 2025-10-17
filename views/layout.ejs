@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Primary brand colors using optimal hex format
+                        'nepali-red': '#E8A87C',       // Keep existing warm red
+                        'nepali-blue': '#4A90E2',      // Professional blue
+                        'himalayan': '#6BB6FF',        // Lighter blue accent
+                        'saffron': '#FFB347',          // Warm orange accent
+                        'mountain-white': '#FFFFFF',   // Pure white
+                        'warm-gray': '#64748B',        // Slate gray
+                        'soft-cream': '#F8FAFC',       // Very light blue-gray
+                        
+                        // Extended color palette for better design flexibility
+                        'nepali-blue-50': '#EBF5FF',
+                        'nepali-blue-100': '#DBEAFE',
+                        'nepali-blue-500': '#4A90E2',
+                        'nepali-blue-600': '#3B82F6',
+                        'nepali-blue-700': '#1D4ED8',
+                        
+                        'himalayan-50': '#F0F9FF',
+                        'himalayan-100': '#E0F2FE',
+                        'himalayan-500': '#6BB6FF',
+                        'himalayan-600': '#0EA5E9',
+                        
+                        'saffron-50': '#FFF7ED',
+                        'saffron-100': '#FFEDD5',
+                        'saffron-500': '#FFB347',
+                        'saffron-600': '#EA580C'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-soft-cream text-warm-gray min-h-screen">
+    <!-- Include Enhanced Navigation Bar -->
+    <%- include('partials/navbar') %>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <%- body %>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-nepali-blue text-white mt-16">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">🏔️ NepFood</h3>
+                    <p class="text-gray-300">Authentic Nepali meal kits delivered fresh to your door. Experience the rich flavors of Nepal's traditional cuisine.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/on-the-menu" class="text-gray-300 hover:text-white transition-colors">On The Menu</a></li>
+                        <li><a href="/sign-up" class="text-gray-300 hover:text-white transition-colors">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-300">Email: hello@nepfood.ca</p>
+                    <p class="text-gray-300">Phone: 1-800-NEP-FOOD</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-white">&copy; Siddhartha Khadka, siddhartha.khadka@senecacollege.ca, WEB322 Fall 2025</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!-- Log In Page -->
+<section class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-nepali-blue mb-2">🏔️ NepFood</h1>
+            <h2 class="text-2xl font-bold text-gray-900">Welcome back</h2>
+            <p class="mt-2 text-gray-600">Sign in to your account</p>
+        </div>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <!-- Display error message -->
+            <% if (error) { %>
+                <div class="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <form class="space-y-6" action="/log-in" method="POST">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        Email Address
+                    </label>
+                    <div class="mt-1">
+                        <input id="email" name="email" type="email" required 
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter your email address">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">
+                        Password
+                    </label>
+                    <div class="mt-1">
+                        <input id="password" name="password" type="password" required 
+                               class="form-input appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-nepali-blue focus:border-nepali-blue sm:text-sm"
+                               placeholder="Enter your password">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" 
+                               class="h-4 w-4 text-nepali-blue focus:ring-nepali-blue border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-nepali-blue hover:text-himalayan">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" 
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-nepali-blue hover:bg-himalayan focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-nepali-blue transition-colors hover-magnetic">
+                        Log In
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Don't have an account?</span>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button type="button" 
+                            onclick="window.location.href='/sign-up'"
+                            class="w-full py-3 px-4 border-2 border-nepali-blue rounded-lg text-sm font-semibold text-nepali-blue bg-white hover:bg-nepali-blue hover:text-white transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                        Create New Account
+                    </button>
+                </div>
+            </div>
+
+            <!-- Demo Credentials Info -->
+            <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md">
+                <h4 class="text-sm font-medium text-blue-900 mb-2">Demo Information</h4>
+                <p class="text-xs text-blue-700">
+                    To test the application, create a new account using the sign-up page, then use those credentials to log in.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
