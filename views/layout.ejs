@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
@@ -74,9 +75,19 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-white">&copy; Siddhartha Khadka, siddhartha.khadka@senecacollege.ca, WEB322 Fall 2025</p>
+                <p class="text-white">&copy; abishekbasnet, Abishek.Basnet@trioscollege.ca, WEB322 Fall 2024</p>
             </div>
         </div>
     </footer>
+
+    <!-- n8n Chat Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://abishekbasnetde.app.n8n.cloud/webhook/14e7bec2-4e70-475e-af7d-0316d124401a/chat'
+        });
+    </script>
 </body>
 </html>
